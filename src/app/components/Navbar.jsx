@@ -9,7 +9,7 @@ function Navbar() {
     
     return (
         <div className='flex flex-col items-center justify-center'>
-            <div className='flex justify-between pb-3 md:pb-0 md:justify-center w-full ml-10'>
+            <div className='flex justify-between md:justify-center pl-5 w-full md:pl-0'>
                 <div className={antonio.className}>
                     <h3 className='text-[36px] md:mt-4 text-gray-800'>HLong</h3>
                 </div>
