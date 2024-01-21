@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Antonio } from 'next/font/google'
+import NavLink from './NavLinks';
 const antonio = Antonio({ weight: ['400'], subsets: ['latin'] })
 
 function Navbar() {
@@ -20,11 +21,11 @@ function Navbar() {
                     </svg>
                 </button>
             </div>
-            <div className={`bg-black w-full md:w-auto relative md:rounded-full md:top-24 px-[0.3rem] py-[0.65rem] flex flex-col md:fixed ${isOpen ? 'block' : 'hidden'} md:block`}>
-                <a href="#" className="nav-link text-gray-300 px-3 py-2 rounded-full bg-black active:bg-white active:text-black hover:bg-white hover:text-black">Home</a>
-                <a href="#" className="nav-link text-gray-300 px-3 py-2 rounded-full bg-black active:bg-white active:text-black hover:bg-white hover:text-black">Project</a>
-                <a href="#" className="nav-link text-gray-300 px-3 py-2 rounded-full bg-black active:bg-white active:text-black hover:bg-white hover:text-black">About</a>
-                <a href="#" className="nav-link text-gray-300 px-3 py-2 rounded-full bg-black active:bg-white active:text-black hover:bg-white hover:text-black">Contact</a>
+            <div className={`bg-black w-full md:w-auto relative md:rounded-full md:top-24 px-[0.3rem] py-[0.65rem] flex flex-col md:fixed z-20 ${isOpen ? 'block' : 'hidden'} md:block`}>
+                <NavLink href="#">Home</NavLink>
+                <NavLink href="#">Project</NavLink>
+                <NavLink href="#">About</NavLink>
+                <NavLink href="#">Contact</NavLink>
             </div>
         </div>
     )
