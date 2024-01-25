@@ -1,23 +1,31 @@
 const projects = [
     {
-      name: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: '/Project1.png'
+      name: 'EEEC blog website',
+      description: 'I independently took this website from concept to deployment, encompassing design, development, and launch within a month. Currently, finalization awaits client-provided data (images, content). Completion remains a top priority.',
+      image: '/Project1.png',
+      link: "https://ef-eeec.com/blog/",
+      skills: ['Astro', 'Netlify', 'TailwindCSS', 'Sanity', 'Kute.js']
     },
     {
-      name: 'Project 2',
-      description: 'Lorem ipsum do lor sit amet, consectetur adipiscing elit.lor sit amet, consectetur adipiscing elit. lor sit amet, consectetur adipiscing elit. lor sit amet, consectetur adipiscing elit. lor sit amet, consectetur adipiscing elit. lor sit amet, consectetur adipiscing elit. lor sit amet, consectetur adipiscing elit. lor sit amet, consectetur adipiscing elit. ',
+      name: 'Recipe Manage Website',
+      description: 'This recipe platform aggregates renowned dishes from global sources, centralizing them for easy access. Users can also create and save their own recipes locally. Built with HTML, CSS, Vanilla JS, and Parcel, this project allowed me to learn and apply the MVC model.',
       image: '/Project2.png',
+      link: "https://recipe-manage.netlify.app/",
+      skills: ['HTML', 'CSS', 'JS', 'Parcel']
     },
     {
-      name: 'Project 3',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: '/Project3.png'
+      name: 'Trusify Renting E-commerce',
+      description: 'This is an e-commerce project specializing in digital asset rental using blockchain technology (Near Protocol) that started from a hackathon. Currently, the project is still continuing to develop new features',
+      image: '/Project3.png',
+      link: "https://github.com/hoanglongne/Trusify",
+      skills: ['React', 'Rust', 'Near Protocol', 'TailwindCss']
     },
     {
-      name: 'Project 4',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      name: 'Light out game',
+      description: 'This site is trying to simulate Light out - the classic game we could find in a game center many years ago. I have done this with React.js',
       image: '/Project4.png',
+      link: "https://lights-to-the-out.netlify.app/",
+      skills: ['React', 'JS', 'CSS', 'Netlify']
     }
   ]
   
