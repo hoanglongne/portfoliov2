@@ -59,7 +59,7 @@ export default function Home() {
                 <p className='pl-5 text-gray-600'>{project.description}</p>
                 <SkillWrap>
                   {project.skills.map((skill, index) => (
-                    <Skill index={index} skill={skill} />
+                    <Skill key={index} skill={skill} />
                   ))}
                 </SkillWrap>
               </div>
