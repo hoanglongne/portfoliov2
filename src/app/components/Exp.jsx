@@ -15,7 +15,7 @@ function Exp() {
                     <svg className='w-10 h-80' viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" />
                 </div>
                 {exp.map((e, index) => (
-                    <div className='flex flex-col md:flex-row justify-between md:px-12 md:gap-56'>
+                    <div key={index} className='flex flex-col md:flex-row justify-between md:px-12 md:gap-56'>
                         <div className='flex flex-col flex-1'> 
                             <h3 className='font-semibold text-xl lg:text-2xl'>
                                 {e.company}
