@@ -1,71 +1,22 @@
 import RootLayout from './layout'
-import Navbar from './components/Navbar'
-import Image from 'next/image';
 import projects from '../../public/project.js'
-import Skill from './components/Skill';
-import SkillWrap from './components/SkillWrap';
-import Link from 'next/link';
-export default function Home() {
+import { Navbar, Header, Contact, ProjectsHeader, Project } from './components';
+import Exp from './components/Exp';
 
+export default function Home() {
   return (
     <RootLayout>
       <Navbar />
-      <div className=" flex flex-col relative z-0 gap-20 px-5 md:px-8 lg:px-12">
-        <div className='relative flex flex-col'>
-          <h1 className='text-[16vw] leading-[90%] tracking-[-0.275rem] font-semibold mt-[45px] md:mt-[100px]'>
-            Websites& <br />Branding
-          </h1>
-          <div className='w-full absolute right-0 bottom-0 flex pr-8 md:pr-12 justify-end mt-20'>
-            <div className='inline-flex rounded-full bg-gray-100 p-5 md:p-8 flex-row gap-2 items-center'>
-              <p className='hidden lg:block'>
-                SCROLL DOWN
-              </p>
-              <Image src="/ScrollDown.svg" alt="Scrolldown image" width={15} height={15} />
-            </div>
-          </div>
+      <div className="flex flex-col relative z-0 gap-20 px-5 md:px-8 lg:px-12">
+        <Header />
+        <Contact />
+        <ProjectsHeader />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[-50px] md:px-12">
+          {projects.map((project, index) => (
+            <Project key={index} project={project} />
+          ))}
         </div>
-
-        <div className='flex flex-col md:flex-row justify-between gap-[10vw] md:gap-[20vw] lg:gap-[40vw] md:px-12'>
-          <div className='flex flex-col justify-center gap-2'>
-            <h4 className='text-xl md:text-2xl lg:text-4xl'>Contact Me</h4>
-            <p className='text-sm lg:text-lg'>ngytrhoanglong61@gmail.com</p>
-          </div>
-          <hr className='border-t-2 border-gray-100 md:hidden' />
-          <p className='text-sm md:text-base lg:text-lg'>
-            Enthusiastic Full-Stack Dev | 2+ years building web apps. Always learning, thriving on cutting-edge tech!  Eyeing a pivot to DevOps soon & currently exploring the exciting world of blockchain projects.
-          </p>
-        </div>
-
-        <div className='md:px-12 flex relative lg:mt-10'>
-          <div className='flex flex-col gap-5'>
-            <h4 className='text-xl md:text-2xl lg:text-4xl'>Projects</h4>
-            <p className='w-[70vw] md:w-[50vw] lg:w-[30vw] text-sm md:text-base lg:text-lg'>Forget the ordinary, embrace the extraordinary. My passion for cutting-edge design will forge a brand that stands out from the crowd and sets your imagination ablaze.</p>
-          </div>
-          <div className='absolute right-0 top-0 md:bottom-0 md:top-auto'>
-            <a href='#' className='text-sm lg:pr-12'>View All</a>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[-50px] md:px-12">
-          {projects.map((project, index) => {
-            return (
-              <div key={index} className='w-auto flex flex-col gap-3 mb-10'>
-                <Link href={project.link}>
-                  <Image className='border-[1px] border-gray-300 rounded-[60px]' src={project.image} alt={project.name} layout='responsive' width={500} height={300} />
-                </Link>
-
-                <Link className='text-xl pl-5' href={project.link}>{project.name}</Link>
-
-                <p className='pl-5 text-gray-600'>{project.description}</p>
-                <SkillWrap>
-                  {project.skills.map((skill, index) => (
-                    <Skill key={index} skill={skill} />
-                  ))}
-                </SkillWrap>
-              </div>
-            );
-          })}
-        </div>
+        <Exp />
       </div>
     </RootLayout>
   )
