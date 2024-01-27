@@ -7,3 +7,12 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+.flex.flex-col.items-center.justify-center {
+  transition: top 0.3s;
+  top: -100px; /* Adjust this value based on your navbar's height */
+}
+
+.flex.flex-col.items-center.justify-center.active {
+  top: 0;
+}

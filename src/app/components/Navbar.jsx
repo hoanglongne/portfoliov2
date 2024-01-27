@@ -1,15 +1,37 @@
 'use client'
-
 import { useState, useEffect } from 'react';
 import { Antonio } from 'next/font/google'
 import NavLink from './NavLinks';
+import '../globals.css'
 const antonio = Antonio({ weight: ['400'], subsets: ['latin'] })
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const [isOutOfHero, setIsOutOfHero] = useState(false);
+    const heroHeight = 600; // Adjust this value based on your hero section's height
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const visible = prevScrollPos > currentScrollPos;
+            const outOfHero = currentScrollPos > heroHeight;
+
+            setPrevScrollPos(currentScrollPos);
+            setIsVisible(visible);
+            setIsOutOfHero(outOfHero);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [prevScrollPos]);
+
     return (
-        <div className='flex flex-col items-center justify-center'>
+        <div className={`flex flex-col items-center justify-center ${isVisible && isOutOfHero ? 'active' : ''}`}>
             <div className='flex justify-between md:justify-center pl-5 w-full md:pl-0'>
                 <div className={antonio.className}>
                     <h3 className='text-[36px] md:mt-4 text-gray-800'>HLong</h3>
